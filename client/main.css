@@ -31,7 +31,6 @@ html {
   height: auto;
   text-align: center;
   color: white;
-  text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
 }
 .intro .intro-body {
   text-align: center;
@@ -41,6 +40,10 @@ html {
 .intro .intro-body .intro-text {
   font-size: 20px;
   text-align: center;
+  text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000
+}
+.brand-heading{
+  text-shadow: 0px 0px 3px #000, -1px -1px #000, 1px 1px #000;
 }
 
 @media (min-width: 768px) {
@@ -54,7 +57,6 @@ html {
   }
   .intro .intro-body .intro-text {
     position: relative;
-    bottom: 100px;
     font-size: 26px;
   }
 }
