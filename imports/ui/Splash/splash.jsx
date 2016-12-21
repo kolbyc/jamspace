@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar/navbar.jsx';
 
 export default class Splash extends Component {
   render() {
     return (
       <header className="intro">
         <div className="intro-body">
+          <Navbar />
           <div className="container-fluid">
             <div className="container">
               <div className="row">
