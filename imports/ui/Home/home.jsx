@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="homeDiv">
-        <h1>Welcome {Meteor.user().username}</h1>
+        <h1>Welcome, {Meteor.user().profile["first-name"]}</h1>
         <ul className="nav nav-pills">
           <li className="active"><a data-toggle="pill" href="#connections">Connections</a></li>
           <li><a data-toggle="pill" href="#jam">Who Wants to Jam?</a></li>
