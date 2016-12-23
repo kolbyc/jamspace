@@ -15,7 +15,7 @@ export default class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/home" className="logoButton">JamSpace</Link>
+            <Link to="/home" className="logoButton" style={{ color: 'white' }}>JamSpace</Link>
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
