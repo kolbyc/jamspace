@@ -6,7 +6,6 @@ export default class Splash extends Component {
     return (
       <header className="intro">
         <div className="intro-body">
-          <Navbar />
           <div className="container-fluid">
             <div className="container">
               <div className="row">

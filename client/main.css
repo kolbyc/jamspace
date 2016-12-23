@@ -60,3 +60,26 @@ html {
     font-size: 26px;
   }
 }
+
+.loginDiv {
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #FFFFFF;
+}
+
+.homeDiv {
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #FFFFFF;
+  position: absolute;
+  height: 85%;
+  width: 90%;
+  top: 12%;
+  left: 5%;
+}
+
+.logoButton {
+  background-color: #FFFFFF;
+}

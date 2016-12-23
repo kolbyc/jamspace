@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+import AccountsUiWrapper from '../AccountsUiWrapper/AccountsUiWrapper.jsx';
 import './index.css';
 
 export default class Navbar extends Component {
@@ -13,22 +15,12 @@ export default class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">JamSpace</a>
+            <Link to="/home" className="logoButton">JamSpace</Link>
           </div>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
-              <li className="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
-                <ul className="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" className="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                </ul>
-              </li>
+              <li><div className="loginDiv"><AccountsUiWrapper /></div></li>
             </ul>
           </div>
         </div>
