@@ -96,6 +96,9 @@ html {
 .tab-pane {
   position: absolute;
   overflow-y: auto;
+  height: 85%;
+  width: 90%;
+  top: 20%;
 }
 
 .formDiv {
@@ -111,4 +114,7 @@ html {
   width: 100%;
   top: 12%;
   left: 5%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
 }

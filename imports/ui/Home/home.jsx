@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Meteor } from 'meteor/meteor';
 import JamForm from '../Forms/jamForm.jsx'
-import { jamDivs } from '../../api/JamsDbCollection.js'
 
 export default class Home extends Component {
   render() {
@@ -21,14 +20,12 @@ export default class Home extends Component {
             <p>Here you would see news from you connections. (Under Development)</p>
           </div>
           <div id="jam" className="tab-pane fade">
+            <br />
             <h3>WHO WANTS TO JAM?</h3>
             <p>Here you would see the people in your area that want to get together and jam. (Under Development)</p>
-            <div className="formDiv">
-              <br />
-                <JamForm />
-              <br />
-            </div>
-            <div className="postDiv" dangerouslySetInnerHTML={jamDivs()}/>
+            <br />
+              <JamForm />
+            <br />
           </div>
           <div id="members" className="tab-pane fade">
             <h3>LOOKING FOR MEMBERS/COLLABORATORS</h3>
