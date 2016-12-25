@@ -95,3 +95,9 @@ html {
 .tab-pane {
   overflow-y: auto;
 }
+
+.formDiv {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
+}

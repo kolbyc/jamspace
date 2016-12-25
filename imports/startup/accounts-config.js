@@ -23,3 +23,7 @@ Accounts.ui.config({
         visible: true,
     }]
 });
+
+Accounts.onLogin(function(user){
+  Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.location': UserLocation.get()}});
+});
