@@ -5,6 +5,7 @@ import { jamDivs } from '../../api/JamsDbCollection.js'
 
 export default class Home extends Component {
   render() {
+    Meteor.subscribe('jams');
     return (
       <div className="homeDiv">
         <h1>Welcome, {Meteor.user().profile["first-name"]}</h1>
@@ -27,7 +28,7 @@ export default class Home extends Component {
                 <JamForm />
               <br />
             </div>
-            <div dangerouslySetInnerHTML={jamDivs()}/>
+            <div className="postDiv" dangerouslySetInnerHTML={jamDivs()}/>
           </div>
           <div id="members" className="tab-pane fade">
             <h3>LOOKING FOR MEMBERS/COLLABORATORS</h3>
