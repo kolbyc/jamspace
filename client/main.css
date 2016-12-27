@@ -78,6 +78,7 @@ html {
   width: 90%;
   top: 12%;
   left: 5%;
+  overflow: hidden;
 }
 
 .logoButton {
@@ -93,5 +94,27 @@ html {
 }
 
 .tab-pane {
+  position: absolute;
   overflow-y: auto;
+  height: 85%;
+  width: 90%;
+  top: 20%;
+}
+
+.formDiv {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
+  position: relative;
+}
+
+.postDiv {
+  padding: 12px;
+  height: 100px;
+  width: 100%;
+  top: 12%;
+  left: 5%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
 }

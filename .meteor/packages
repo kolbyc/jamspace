@@ -29,3 +29,4 @@ twbs:bootstrap
 accounts-base
 reactrouter:react-router
 react
+flowkey:user-location
