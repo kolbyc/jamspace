@@ -1,4 +1,5 @@
 import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 
 Accounts.ui.config({
   passwordSignupFields: 'EMAIL_ONLY',
@@ -23,6 +24,12 @@ Accounts.ui.config({
         visible: true,
     }]
 });
+
+if(Meteor.isServer){
+  Accounts.onCreateUser(function(options, user) {
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.url': "test"}});
+  });
+}
 
 Accounts.onLogin(function(user){
   Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.location': UserLocation.get()}});
