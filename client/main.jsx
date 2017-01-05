@@ -26,7 +26,7 @@ Meteor.startup(() => {
           <IndexRedirect to="splash" />
           <Route path="splash" component={Splash} />
           <Route path="home" component={Home} onEnter={requireAuth} />
-          <Route path="profile/:user" component={Profile} onEnter={requireAuth} />
+          <Route path="profile/*" component={Profile} onEnter={requireAuth} />
           <Route path="*" component={Splash} />
         </Route>
       </Router>,

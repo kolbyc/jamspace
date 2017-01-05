@@ -25,12 +25,43 @@ Accounts.ui.config({
     }]
 });
 
-if(Meteor.isServer){
-  Accounts.onCreateUser(function(options, user) {
-    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.url': "test"}});
-  });
+function createURL() {
+  let urlName = Meteor.user().profile["urlName"];
+  let urlNumber = Meteor.user().profile["urlNumber"];
+  let allUsers = Meteor.users.find().fetch();
+  let returnUrl;
+
+  for(let i = 0; i < allUsers.length; i++) {
+    let loop = true;
+    while(loop) {
+      if(allUsers[i].profile["urlName"] === urlName && allUsers[i]._id != Meteor.userId()) {
+        if(allUsers[i].profile["urlNumber"] == urlNumber){
+          urlNumber++;
+        }
+        else{
+          returnUrl = urlName + urlNumber.toString();
+          loop = false;
+        }
+      }
+      else{
+        returnUrl = urlName + urlNumber.toString();
+        loop = false;
+      }
+    }
+  }
+  return returnUrl;
 }
 
 Accounts.onLogin(function(user){
   Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.location': UserLocation.get()}});
+
+  if(Meteor.user().profile["url"] === undefined) {
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.name': Meteor.user().profile["first-name"]}});
+    let name = Meteor.user().profile["first-name"] + "." + Meteor.user().profile["last-name"];
+    let num = 1;
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.urlName': name}});
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.urlNumber': num}});
+    let url = createURL();
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.url': url}});
+  }
 });

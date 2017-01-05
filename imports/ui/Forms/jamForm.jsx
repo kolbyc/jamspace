@@ -59,7 +59,7 @@ export default class JamForm extends Component {
         allJams[i].user.profile["location"].latitude, allJams[i].user.profile["location"].longitude);
       if(distance <= 10) {
         name = allJams[i].user.profile["first-name"] + " " + allJams[i].user.profile["last-name"];
-        groups.push(<div> <div className="postDiv"> <br /> <Link to="/profile/:user" query={{ user: Meteor.userId() }}> {name} </Link> <br /> {allJams[i].jamInfo} <br /> </div> <br /> </div>);
+        groups.push(<div> <div className="postDiv"> <br /> <Link to="/profile/" query={{ user: allJams[i].user.profile["url"] }}> {name} </Link> <br /> {allJams[i].jamInfo} <br /> </div> <br /> </div>);
       }
     }
 

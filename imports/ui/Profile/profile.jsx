@@ -7,11 +7,11 @@ export default class Profile extends Component {
   }
 
   render() {
-    function findName(id) {
+    function findName(urlName) {
       let users = Meteor.users.find().fetch();
 
       for(let i = 0; i < users.length; i++) {
-        if(users[i]._id === id) {
+        if(users[i].profile["url"] === urlName) {
           name = users[i].profile["first-name"] + " " + users[i].profile["last-name"];
           return name
         }
